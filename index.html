@@ -14,10 +14,32 @@
             height: 100vh;
          }
 
+         .modal {
+            display: none;
+         }
+
+         .wrapper {
+            display: block;
+         }
+
+         .open {
+            display: block;
+         }
+
+         .close {
+            display: none;
+         }
+
          .heart {
             font-size: 20rem;
             color: red;
             animation: heart 0.5s infinite alternate-reverse linear;
+         }
+         
+         .btn {
+            padding: 5rem 10rem;
+            font-size: 5rem;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
          }
 
          @keyframes heart {
@@ -31,6 +53,23 @@
     </style>
 </head>
 <body>
-    <div class="heart">♥</div>
+    <div class="wrapper">
+        <button class="btn">Nhấn vào đi bạn êi</button>
+    </div>
+    <div class="modal">
+        <div class="heart">♥</div>
+    </div>
+
+
+    <script>
+        const modalBtn = document.querySelector(".btn")
+        const modalHeart = document.querySelector(".modal")
+        const modalWrapper = document.querySelector(".wrapper")
+       const showHeart = () => {
+        modalHeart.classList.add("open")
+        modalWrapper.classList.add("close")
+       }
+        modalBtn.addEventListener("click", showHeart)
+    </script>
 </body>
 </html>
