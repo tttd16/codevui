@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart </title>
+    <style>
+         body{
+            background-color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+         }
+
+         .heart {
+            font-size: 20rem;
+            color: red;
+            animation: heart 0.5s infinite alternate-reverse linear;
+         }
+
+         @keyframes heart {
+            from {
+                transform: scale(0.7);
+            } 
+            to {
+                transform: scale(1);
+            }
+         }
+    </style>
+</head>
+<body>
+    <div class="heart">♥</div>
+</body>
+</html>
