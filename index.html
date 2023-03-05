@@ -1,75 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heart </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heart</title>
     <style>
-         body{
-            background-color: aliceblue;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-         }
+      body {
+        background-color: aliceblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
-         .modal {
-            display: none;
-         }
+      .modal {
+        display: none;
+      }
 
-         .wrapper {
-            display: block;
-         }
+      .wrapper {
+        display: block;
+      }
 
-         .open {
-            display: block;
-         }
+      .open {
+        display: block;
+      }
 
-         .close {
-            display: none;
-         }
+      .close {
+        display: none;
+      }
 
-         .heart {
-            font-size: 20rem;
-            color: red;
-            animation: heart 0.5s infinite alternate-reverse linear;
-         }
-         
-         .btn {
-            padding: 5rem 10rem;
-            font-size: 5rem;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-         }
+      .heart {
+        font-size: 20rem;
+        color: red;
+        animation: heart 0.5s infinite alternate-reverse linear;
+      }
 
-         @keyframes heart {
-            from {
-                transform: scale(0.7);
-            } 
-            to {
-                transform: scale(1);
-            }
-         }
+      .btn {
+        padding: 5rem 10rem;
+        font-size: 5rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .close-heart {
+        font-size: 20px;
+        position: absolute;
+        width: 100px;
+        top: 50%;
+        left: 0;
+        color: red;
+        background-color: aliceblue;
+        border: none;
+        cursor: pointer;
+        transition: 0.8s;
+        text-transform: uppercase;
+      }
+
+      .close-heart:hover {
+        color: purple;
+        font-size: 50px;
+      }
+
+      @keyframes heart {
+        from {
+          transform: scale(0.7);
+        }
+
+        to {
+          transform: scale(1);
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+
+  <body>
     <div class="wrapper">
-        <button class="btn">Nhấn vào đi bạn êi</button>
+      <button class="btn">Nhấn vào đi bạn êi</button>
     </div>
     <div class="modal">
-        <div class="heart">♥</div>
+      <div class="heart">♥</div>
+      <button class="close-heart">close</button>
     </div>
 
-
     <script>
-        const modalBtn = document.querySelector(".btn")
-        const modalHeart = document.querySelector(".modal")
-        const modalWrapper = document.querySelector(".wrapper")
-       const showHeart = () => {
-        modalHeart.classList.add("open")
-        modalWrapper.classList.add("close")
-       }
-        modalBtn.addEventListener("click", showHeart)
+      const modalBtn = document.querySelector(".btn");
+      const btnClose = document.querySelector(".close-heart");
+      const modalHeart = document.querySelector(".modal");
+      const modalWrapper = document.querySelector(".wrapper");
+      const showHeart = () => {
+        modalHeart.classList.add("open");
+        modalWrapper.classList.add("close");
+      };
+      modalBtn.addEventListener("click", showHeart);
+
+      const closeHeart = () => {
+        modalHeart.classList.remove("open");
+        modalWrapper.classList.remove("close");
+      };
+      btnClose.addEventListener("click", closeHeart);
     </script>
-</body>
+  </body>
 </html>
